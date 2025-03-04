@@ -1,27 +1,46 @@
 # Flix App
 
-## Requisitos
+Flix App é uma aplicação web desenvolvida com **Streamlit** que consome a **Flix API**, permitindo aos usuários explorar um catálogo de filmes, fazer buscas, filtrar conteúdos, visualizar detalhes e avaliar filmes. O sistema também conta com um sistema de autenticação para gerenciar acessos.
 
-Certifique-se de que você tenha os seguintes requisitos instalados em seu sistema:
+## Funcionalidades
 
-- Python (versão recomendada: 3.7 ou superior)
-- Outras dependências listadas no arquivo `requirements.txt`
+- **Autenticação de Usuários**: Login e registro utilizando a API.
+- **Catálogo de Filmes**: Lista completa dos filmes cadastrados na **Flix API**.
+- **Busca Avançada**: Filtragem por gênero, popularidade e data de lançamento.
+- **Detalhes do Filme**: Exibição de informações detalhadas sobre cada filme.
+- **Avaliações**: Usuários podem avaliar e comentar sobre os filmes.
+- **Interface Simples e Intuitiva**: Desenvolvida com **Streamlit**, focada na experiência do usuário.
 
+## Tecnologias Utilizadas
 
-## Instalação das Dependências
+- **Streamlit**: Framework para criação de aplicações web interativas em Python.
+- **Python**: Linguagem principal do projeto.
+- **Flix API**: API RESTful desenvolvida em **Django REST Framework**.
+- **JWT**: Autenticação baseada em tokens.
 
-Com o ambiente virtual ativado, instale as dependências do projeto usando o comando:
-```bash
-pip install -r requirements.txt
-```
+## Instalação e Execução
 
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/flix-app.git
+   cd flix-app
+   ```
 
-## Rodar o projeto
+2. **Criar e ativar um ambiente virtual:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   venv\Scripts\activate  # Windows
+   ```
 
-Após instalar as dependências, execute o projeto com:
-```bash
-streamlit run app.py
-```
+3. **Instalar as dependências:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Após isso, o sistema estará pronto para ser acessado em:
-[http://localhost:8501](http://localhost:8501)
+4. **Executar a aplicação:**
+   ```bash
+   streamlit run app.py
+   ```
+
+A aplicação estará disponível em: [http://localhost:8501](http://localhost:8501)
