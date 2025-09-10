@@ -18,34 +18,52 @@
 
 ## 📝 Sobre o Projeto
 
-O **Flix App** é uma aplicação web moderna desenvolvida com Streamlit para gerenciamento de filmes, permitindo aos usuários visualizar, cadastrar e gerenciar informações sobre filmes, gêneros, atores e avaliações. A aplicação oferece uma interface intuitiva com dashboards visuais e gráficos interativos.
+O **Flix App** é uma aplicação web desenvolvida com **Streamlit** que consome a **Flix API**, permitindo aos usuários explorar um catálogo de filmes, fazer buscas, filtrar conteúdos, visualizar detalhes e avaliar filmes. O sistema também conta com um sistema de autenticação para gerenciar acessos e oferece uma interface intuitiva com dashboards visuais e gráficos interativos.
+
+A aplicação funciona como um frontend moderno que se comunica com a **Flix API** (desenvolvida em **Django REST Framework**), proporcionando uma experiência completa de gerenciamento de filmes com funcionalidades avançadas de visualização de dados.
 
 ## ✨ Funcionalidades
 
-### 🏠 Dashboard Principal
-- **Estatísticas Gerais**: Visualização do total de filmes cadastrados
+### 🔐 Autenticação de Usuários
+- **Login e Registro**: Sistema de autenticação utilizando a **Flix API**
+- **JWT Token**: Autenticação baseada em tokens para segurança
+- **Controle de Sessão**: Gerenciamento automático de sessões ativas
+- **Logout Automático**: Desconexão em caso de token expirado
+
+### 🎬 Catálogo de Filmes
+- **Lista Completa**: Acesso a todos os filmes cadastrados na **Flix API**
+- **Busca Avançada**: Filtragem por gênero, popularidade e data de lançamento
+- **Detalhes Completos**: Visualização de informações detalhadas sobre cada filme
+- **Interface Intuitiva**: Navegação simples e responsiva
+
+### 🏠 Dashboard Interativo
+- **Estatísticas em Tempo Real**: Visualização do total de filmes cadastrados
 - **Gráficos Interativos**: Distribuição de filmes por gênero usando Plotly
 - **Métricas de Avaliações**: Total de avaliações e média geral de estrelas
+- **Visualização de Dados**: Charts e gráficos dinâmicos
 
-### 🎭 Gerenciamento de Dados
+### 🎭 Gerenciamento Completo
 - **🎬 Filmes**: Cadastro e visualização de filmes com informações detalhadas
-- **🎭 Atores/Atrizes**: Gerenciamento de elenco
-- **🏷️ Gêneros**: Organização por categorias
-- **⭐ Avaliações**: Sistema de reviews e classificações
-
-### 🔐 Sistema de Autenticação
-- Login seguro com token JWT
-- Controle de sessão integrado
-- Logout automático em caso de token expirado
+- **🎭 Atores/Atrizes**: Gerenciamento completo do elenco
+- **🏷️ Gêneros**: Organização e categorização por gêneros
+- **⭐ Avaliações**: Sistema completo de reviews, comentários e classificações
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Frontend**: Streamlit
-- **Visualização de Dados**: Plotly Express
-- **Grid Interativo**: Streamlit-AgGrid
-- **Requisições HTTP**: Requests
-- **Configuração**: TOML
-- **Linting**: Flake8
+### Frontend
+- **Streamlit**: Framework para criação de aplicações web interativas em Python
+- **Plotly Express**: Biblioteca para visualização de dados e gráficos interativos
+- **Streamlit-AgGrid**: Componente para grids interativos e tabelas avançadas
+
+### Backend Integration
+- **Flix API**: API RESTful desenvolvida em **Django REST Framework**
+- **Requests**: Biblioteca para requisições HTTP e comunicação com a API
+- **JWT**: Sistema de autenticação baseado em tokens
+
+### Desenvolvimento
+- **Python**: Linguagem principal do projeto
+- **TOML**: Formato de configuração
+- **Flake8**: Ferramenta de linting para qualidade de código
 
 ## 🏗️ Arquitetura
 
@@ -73,8 +91,9 @@ Cada módulo contém:
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Python 3.8+
-- API Backend rodando em `http://localhost:8000`
+- **Python 3.8+**
+- **Flix API**: Backend rodando em `http://localhost:8000`
+- **Ambiente Virtual**: Recomendado para isolamento de dependências
 
 ### Instalação
 
@@ -84,17 +103,24 @@ git clone https://github.com/Kauanrodrigues01/flix-app.git
 cd flix-app
 ```
 
-2. **Instale as dependências**
+2. **Crie e ative um ambiente virtual**
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
+
+3. **Instale as dependências**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Execute a aplicação**
+4. **Execute a aplicação**
 ```bash
 streamlit run app.py
 ```
 
-4. **Acesse no navegador**
+5. **Acesse no navegador**
 ```
 http://localhost:8501
 ```
@@ -118,10 +144,12 @@ flake8 .
 - Validação de dados
 - Feedback visual para ações do usuário
 
-### Integração com API
-- Comunicação segura via JWT
-- Tratamento de erros robusto
-- Cache de dados para melhor performance
+### Integração com Flix API
+- **Comunicação Segura**: Todas as requisições utilizam autenticação JWT
+- **Endpoints RESTful**: Consumo completo da API Django REST Framework
+- **Tratamento de Erros**: Sistema robusto de tratamento de exceções
+- **Cache Inteligente**: Otimização de performance com cache de dados em sessão
+- **Sincronização**: Dados sempre atualizados com o backend
 
 ## 🔧 Configuração
 
@@ -138,25 +166,11 @@ A aplicação foi desenvolvida com design responsivo, funcionando perfeitamente 
 - 📱 Mobile
 - 📟 Tablet
 
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 👨‍💻 Autor
 
-**Kauan Rodrigues**
+**Kauan Rodrigues Lima**
+
 - GitHub: [@Kauanrodrigues01](https://github.com/Kauanrodrigues01)
+- LinkedIn: [Kauan Rodrigues](https://www.linkedin.com/in/kauan-rodrigues-lima/)
 
 ---
-
-<div align="center">
-  Feito com ❤️ e Python
-</div>
